@@ -1,0 +1,7 @@
+# requirements.txt
+
+# Streamlit es un framework para crear aplicaciones web interactivas.
+streamlit==1.26.0  
+
+# Pandas es una biblioteca para manipulación y análisis de datos.
+pandas==2.0.3 
