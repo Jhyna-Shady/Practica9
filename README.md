@@ -8,3 +8,5 @@ Integrantes:
 
 El archivo administrar_libros.py funciona escribiendo los datos desde la terminal de salida
 El archivo app.py es la implementacion del funciionamiento del codigo, pero a travez de una aplicacion web en streamlit
+
+Link de la practica en Streamlit: https://practica9-v7brerunbtzurpbkgjrkfz.streamlit.app/
