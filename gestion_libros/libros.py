@@ -1,6 +1,7 @@
 # gestion_libros/libros.py
 
 class Libro:
+    #constructor que se ejecuta al crear una instancia de la clase 
     def __init__(self, titulo, autor, anio, genero, isbn):
         """
         Inicializa un nuevo libro con los datos proporcionados.
@@ -12,14 +13,17 @@ class Libro:
         :param isbn: El ISBN del libro. Este debe ser único.
         :raises ValueError: Si el año no es un número.
         """
+        #verifica que el anio sera un numero 
         if not anio.isdigit():
             raise ValueError("El año debe ser un número.")
+            #se nicializa los atributos
         self.titulo = titulo
         self.autor = autor
         self.anio = anio
         self.genero = genero
         self.isbn = isbn
 
+    #metodo para representar los libros como cadena de texto
     def __str__(self):
         """
         Representación en cadena del libro.
