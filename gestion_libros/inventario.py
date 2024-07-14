@@ -45,7 +45,9 @@ class Inventario:
         #guarda el dataframe
         df.to_csv(self.archivo_csv, index=False)
         
-
+    def convertir_csv_a_excel(self):
+        df = pd.read_csv(self.archivo_csv)
+        df.to_excel(self.archivo_excel, index=False)
     
 #metodo para agregar un libro al inventario
     def agregar_libro(self, libro):
