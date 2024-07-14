@@ -118,3 +118,10 @@ with tabs[5]:
     if st.button("Descargar CSV"):
         inventario.guardar_libros()
         st.success("Inventario guardado como CSV correctamente.")
+
+#pestana para descargar en formato Excel
+with tabs[6]:
+    st.header("Descargar Inventario como Excel")
+    if st.button("Descargar Excel"):
+        inventario.guardar_libros_excel()
+        st.success("Inventario guardado como Excel correctamente.")
