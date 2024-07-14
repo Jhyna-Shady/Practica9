@@ -12,7 +12,7 @@ inventario = Inventario(archivo_csv)
 st.title("Gestión de Libros")
 
 # Definir las opciones como pestañas
-tabs = st.tabs(["Agregar Libro", "Eliminar Libro", "Buscar Libro", "Listar Libros", "Actualizar Libro", "Descargar CSV"])
+tabs = st.tabs(["Agregar Libro", "Eliminar Libro", "Buscar Libro", "Listar Libros", "Actualizar Libro", "Descargar CSV", "Descargar Excel"])
 
 # Pestaña para agregar un libro
 with tabs[0]:
