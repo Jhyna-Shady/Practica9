@@ -119,12 +119,4 @@ with tabs[5]:
         inventario.guardar_libros()
         st.success("Inventario guardado como CSV correctamente.")
 
-# Pestaña para descargar el inventario como Excel
-with tabs[6]:
-    st.header("Descargar Inventario como Excel")
-    if st.button("Descargar Excel"):
-            inventario.convertir_csv_a_excel()  # Luego convierte a Excel
-            st.success("Inventario guardado como Excel correctamente.")
-        except Exception as e:
-            st.error(f"Error al guardar el inventario como Excel: {e}")
 
