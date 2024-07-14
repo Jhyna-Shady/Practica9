@@ -8,7 +8,7 @@ from gestion_libros.libros import Libro
 #definimos la clase inventario
 class Inventario:
     # constructor que se ejecuta al crear una instancia de la clase
-    def _init_(self, archivo_csv):
+    def __init__(self, archivo_csv):
         self.libros = {} #inicializa vacio, para poder almacenar los libros
         self.archivo_csv = archivo_csv #almacena la ruta del archivo csv
         self.cargar_libros() #llama al metodo cargar libros
@@ -45,7 +45,6 @@ class Inventario:
         #guarda el dataframe
         df.to_csv(self.archivo_csv, index=False)
 
-    
 #metodo para agregar un libro al inventario
     def agregar_libro(self, libro):
         if libro.isbn in self.libros:
@@ -88,3 +87,4 @@ class Inventario:
             self.guardar_libros()  # Guardar los cambios al libro en el archivo CSV
         else:
             raise ValueError("El libro con este título no se encuentra en el inventario.")
+este es el codigo , corregir y reescrbir
