@@ -123,5 +123,6 @@ with tabs[5]:
 with tabs[6]:
     st.header("Descargar Inventario como Excel")
     if st.button("Descargar Excel"):
-        inventario.guardar_libros_excel()
+        inventario.guardar_libros()  # Primero guarda como CSV
+        inventario.convertir_csv_a_excel()  # Luego convierte a Excel
         st.success("Inventario guardado como Excel correctamente.")
