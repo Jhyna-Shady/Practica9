@@ -8,9 +8,10 @@ from gestion_libros.libros import Libro
 #definimos la clase inventario
 class Inventario:
     # constructor que se ejecuta al crear una instancia de la clase
-    def __init__(self, archivo_csv):
+    def __init__(self, archivo_csv, archivo_excel):
         self.libros = {} #inicializa vacio, para poder almacenar los libros
         self.archivo_csv = archivo_csv #almacena la ruta del archivo csv
+        self.archivo_excel = archivo_excel
         self.cargar_libros() #llama al metodo cargar libros
 
     # metodo para cargar los libros desde el archivo csv
@@ -44,6 +45,16 @@ class Inventario:
         df = pd.DataFrame(datos)
         #guarda el dataframe
         df.to_csv(self.archivo_csv, index=False)
+        
+    def convertir_csv_a_excel(self):
+        try:
+            df = pd.read_csv(self.archivo_csv)
+            df.to_excel(self.archivo_excel, index=False)
+        except Exception as e:
+            print(f"Error al convertir CSV a Excel: {e}")
+            raise
+
+    
 
 #metodo para agregar un libro al inventario
     def agregar_libro(self, libro):
