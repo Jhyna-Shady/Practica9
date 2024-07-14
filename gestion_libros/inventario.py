@@ -44,6 +44,21 @@ class Inventario:
         df = pd.DataFrame(datos)
         #guarda el dataframe
         df.to_csv(self.archivo_csv, index=False)
+        
+    def guardar_libros_excel(self):
+        datos = []
+        for libro in self.libros.values():
+            datos.append({
+                'titulo': libro.titulo,
+                'autor': libro.autor,
+                'anio': libro.anio,
+                'genero': libro.genero,
+                'isbn': libro.isbn
+            })
+        df = pd.DataFrame(datos)
+        df.to_excel(self.archivo_excel, index=False)
+
+    
 #metodo para agregar un libro al inventario
     def agregar_libro(self, libro):
         if libro.isbn in self.libros:
