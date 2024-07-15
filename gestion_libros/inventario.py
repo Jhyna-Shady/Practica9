@@ -44,9 +44,8 @@ class Inventario:
         df = pd.DataFrame(datos)
         #guarda el dataframe
         df.to_csv(self.archivo_csv, index=False)
-
+        
     
-
 #metodo para agregar un libro al inventario
     def agregar_libro(self, libro):
         if libro.isbn in self.libros:
