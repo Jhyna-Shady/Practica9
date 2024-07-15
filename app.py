@@ -1,12 +1,7 @@
 # app.py
 import streamlit as st
 import pandas as pd
-<<<<<<< HEAD
 from gestion_libros.inventario import Inventario, Libro
-=======
-from gestion_libros.inventario import Inventario
-from gestion_libros.libros import Libro
->>>>>>> afc70ea6a17af163a65b96e7eddfc79ebac320de
 
 # Configurar el inventario con el archivo CSV
 archivo_csv = 'inventario_libros.csv'
