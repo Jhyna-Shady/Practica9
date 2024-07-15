@@ -1,4 +1,4 @@
-# requirements.txt
+# requeriments.txt
 
 # Streamlit es un framework para crear aplicaciones web interactivas.
 streamlit==1.26.0  
