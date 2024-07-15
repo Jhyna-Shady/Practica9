@@ -12,7 +12,7 @@ inventario = Inventario(archivo_csv)
 st.title("Gestión de Libros")
 
 # Definir las opciones como pestañas
-tabs = st.tabs(["Agregar Libro", "Eliminar Libro", "Buscar Libro", "Listar Libros", "Actualizar Libro", "Descargar CSV", "Descargar Excel"])
+tabs = st.tabs(["Agregar Libro", "Eliminar Libro", "Buscar Libro", "Listar Libros", "Actualizar Libro", "Descargar CSV"])
 
 # Pestaña para agregar un libro
 with tabs[0]:
@@ -118,5 +118,4 @@ with tabs[5]:
     if st.button("Descargar CSV"):
         inventario.guardar_libros()
         st.success("Inventario guardado como CSV correctamente.")
-
 
