@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from gestion_libros.inventario import Inventario, Libro
 from io import BytesIO
+import xlsxwriter
 
 
 # Configurar el inventario con el archivo CSV
