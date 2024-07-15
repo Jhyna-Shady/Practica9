@@ -2,6 +2,8 @@
 import streamlit as st
 import pandas as pd
 from gestion_libros.inventario import Inventario, Libro
+from io import BytesIO
+
 
 # Configurar el inventario con el archivo CSV
 archivo_csv = 'inventario_libros.csv'
@@ -110,9 +112,9 @@ with tabs[4]:
             else:
                 st.error("El libro con este título no se encuentra en el inventario.")
                    
-# Pestaña para descargar el inventario como CSV
+# Pestaña para descargar el inventario como CSV o Excel
 with tabs[5]:
-    st.header("Descargar Inventario como CSV")
+    st.header("Descargar Inventario")
 
     if st.button("Generar CSV"):
         df = pd.read_csv(archivo_csv)
@@ -124,3 +126,18 @@ with tabs[5]:
             mime='text/csv'
         )
         st.success("Inventario generado como CSV correctamente.")
+
+    if st.button("Generar EXCEL"):
+        df = pd.read_csv(archivo_csv)
+        output = BytesIO()
+        writer = pd.ExcelWriter(output, engine='xlsxwriter')
+        df.to_excel(writer, index=False, sheet_name='Inventario')
+        writer.close()
+        output.seek(0)
+        st.download_button(
+            label="Descargar EXCEL",
+            data=output,
+            file_name='inventario_libros.xlsx',
+            mime='application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+        )
+        st.success("Inventario generado como EXCEL correctamente.")
